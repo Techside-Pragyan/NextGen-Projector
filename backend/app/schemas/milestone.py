@@ -1,5 +1,5 @@
-from typing import List, Optional
-from pydantic import BaseModel, Field
+from typing import List
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class CodeSnippetSchema(BaseModel):
@@ -9,6 +9,8 @@ class CodeSnippetSchema(BaseModel):
 
 
 class MilestoneNodeSchema(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: str
     phase_number: int
     title: str
@@ -19,9 +21,6 @@ class MilestoneNodeSchema(BaseModel):
     code_snippets: List[CodeSnippetSchema] = Field(default_factory=list)
     status: str = "LOCKED"  # 'LOCKED', 'AVAILABLE', 'IN_PROGRESS', 'COMPLETED'
     is_completed: bool = False
-
-    class Config:
-        from_attributes = True
 
 
 class ToggleMilestoneResponse(BaseModel):

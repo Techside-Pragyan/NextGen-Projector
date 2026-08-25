@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import List, Optional
 import uuid
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class DifficultyLevel(str, Enum):
@@ -38,6 +38,8 @@ class IdeaRequestSchema(BaseModel):
 
 
 class GeneratedIdeaSchema(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     title: str
     tagline: str
@@ -50,9 +52,6 @@ class GeneratedIdeaSchema(BaseModel):
     recommended_tech_stack: TechStackSchema
     key_features: List[str]
     estimated_completion_weeks: int = 4
-
-    class Config:
-        from_attributes = True
 
 
 class IdeaListResponse(BaseModel):
