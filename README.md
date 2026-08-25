@@ -6,8 +6,18 @@
 
 ---
 
+## 🛠️ Architecture & Tech Stack
+- **Frontend:** **React (Vite + TypeScript)**, TailwindCSS, React Flow (`@xyflow/react`), Framer Motion, Lucide Icons, Zustand
+- **Backend:** **Python 3.11+**, **FastAPI (Async ASGI)**, Pydantic v2, Uvicorn, AsyncIO
+- **Database & ORM:** **PostgreSQL 16**, SQLAlchemy 2.0 (Async), `asyncpg`, Alembic Migrations
+- **Cache & Tasks:** **Redis**, AsyncIO BackgroundTasks / Celery
+- **AI Engine:** **Google Gemini 1.5/2.0 API** (`google-genai` / `google-generativeai`)
+- **Design Aesthetic:** Obsidian Cyber-Glass (Deep OLED Dark Mode, Glassmorphic Panels, Neon Glow Accents)
+
+---
+
 ## 📑 Complete System Specifications
-The complete master engineering specifications document has been compiled and is available in:
+The master design and technical specification is available at:
 👉 **[SYSTEM_DESIGN.md](file:///c:/Users/pragy/Documents/GitHub/NextGen-Projector/SYSTEM_DESIGN.md)**
 
 ### Included Sections:
@@ -15,21 +25,12 @@ The complete master engineering specifications document has been compiled and is
 2. ⚙️ **TRD** (Technical Requirements Document)
 3. 🔄 **DFD** (Data Flow Diagrams - Levels 0, 1, 2)
 4. 🏗️ **HLD** (High-Level Architecture Design)
-5. 🔍 **LLD** (Low-Level Design & TypeScript Interfaces)
-6. 🎨 **UI / Wireframes & Futuristic Obsidian Design System**
+5. 🔍 **LLD** (Low-Level Design, Python Pydantic Schemas & Service Classes)
+6. 🎨 **UI / Wireframes & Obsidian Cyber-Glass Design System**
 7. 📖 **User Stories & Acceptance Criteria**
-8. 🗄️ **Database Design (ERD & PostgreSQL Schemas)**
-9. 🌐 **API Design & Endpoint Specifications (REST + SSE)**
+8. 🗄️ **Database Design (PostgreSQL ERD & SQL DDL Schemas)**
+9. 🌐 **API Design & FastAPI REST + SSE Specifications**
 10. 🎯 **Master Phased Implementation TODO**
-
----
-
-## 🛠️ Architecture Stack At-A-Glance
-- **Frontend:** Next.js 15+ (App Router), React 19, TailwindCSS, React Flow (@xyflow/react), Framer Motion, Lucide Icons
-- **Backend:** Node.js, Express/Fastify (TypeScript), Prisma ORM
-- **Database & Cache:** PostgreSQL (Neon / Supabase), Redis (Upstash)
-- **AI Engine:** Google Gemini 1.5/2.0 API, LangChain
-- **Design Aesthetic:** Obsidian Cyber-Glass (Deep OLED Dark Mode, Glassmorphic Panels, Neon Glow Accents)
 
 ---
 

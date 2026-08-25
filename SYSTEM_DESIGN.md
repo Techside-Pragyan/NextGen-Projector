@@ -1,6 +1,6 @@
-# 🚀 NextGen-Projector: Complete System Design & Specifications Document (Master Spec)
+# 🚀 NextGen-Projector: Master System Architecture & Specifications
 
-> **Platform Overview:** NextGen-Projector is an AI-powered, futuristic engineering workspace and intelligent ideation engine that transforms developer skills, target tech stacks, difficulty aspirations, and career milestones into trending, resume-worthy, industry-grade project ideas, accompanied by real-time interactive roadmaps, deep technical blueprints, automated architecture scaffolders, and resume impact analyzers.
+> **Stack Specification:** **React (Vite + TypeScript)** + **Python (FastAPI + AsyncIO + SQLAlchemy 2.0)** + **PostgreSQL (pgvector + JSONB)** + **Google Gemini AI Engine**.
 
 ---
 
@@ -12,8 +12,8 @@
 5. [Low-Level Design (LLD)](#5-low-level-design-lld)
 6. [UI / Wireframes & Futuristic Design System](#6-ui--wireframes--futuristic-design-system)
 7. [User Stories & Acceptance Criteria](#7-user-stories--acceptance-criteria)
-8. [Database Design (ERD & Schemas)](#8-database-design)
-9. [API Design & Interface Specifications](#9-api-design--interface-specifications)
+8. [Database Design (ERD & PostgreSQL Schemas)](#8-database-design)
+9. [API Design & Interface Specifications (FastAPI)](#9-api-design--interface-specifications)
 10. [Master Phased Implementation TODO](#10-master-phased-implementation-todo)
 
 ---
@@ -21,86 +21,89 @@
 # 1. Product Requirements Document (PRD)
 
 ## 1.1 Executive Summary & Problem Statement
-- **The Problem:** Modern aspiring software engineers, students, and experienced developers transitioning to new domains struggle to find project ideas that stand out to tech recruiters. Most end up building generic tutorial clones (e.g., standard Todo apps, basic E-commerce, simple Weather apps) that fail to impress hiring managers or showcase real architectural mastery.
-- **The Solution:** **NextGen-Projector** bridges this gap by leveraging Generative AI (LLMs), live GitHub/tech industry trend signals, and algorithmic difficulty calibration to generate hyper-personalized, market-relevant project concepts with production-grade blueprints, step-by-step interactive visual milestones, architecture diagrams, resume bullet generators, and one-click starter scaffolds.
+- **The Problem:** Modern engineering students and software developers struggle to discover project ideas that impress tech recruiters. Most end up building generic tutorial clones (e.g., standard Todo apps, basic E-commerce, simple Weather apps) that fail to showcase real architectural competence, system design trade-offs, or production nuances.
+- **The Solution:** **NextGen-Projector** is an AI-powered engineering cockpit that transforms a developer's skills, preferred tech stack, difficulty aspirations, and career milestones into market-relevant, resume-worthy project concepts. It provides deep production blueprints, interactive visual roadmaps, automated architectural scaffolding, and ATS-optimized resume bullet generators.
 
-## 1.2 Target Audience & Personas
-1. **The Entry-Level Developer / CS Student:** Needs resume-defining capstone projects that prove competence with modern stacks (e.g., Next.js, FastAPI, Vector Databases, Distributed Systems).
-2. **The Career Switcher / Mid-Level Upskiller:** Wants to master specific domains (e.g., AI/ML Agents, Web3/DeFi, Real-Time WebSockets, High-Throughput Microservices) by building real-world enterprise architectures.
-3. **The Hackathon Enthusiast & Indie Hacker:** Needs innovative, novel, and high-impact concepts with rapid prototype roadmaps and tech stack recommendations.
+## 1.2 Target Personas
+1. **The Entry-Level Developer / CS Student:** Needs capstone projects demonstrating modern architectural patterns (e.g., streaming APIs, async queues, distributed caching, Vector DBs).
+2. **The Career Switcher / Mid-Level Upskiller:** Seeks structured domain transition projects (e.g., Full-Stack AI Engineer, Distributed Systems, High-Frequency Microservices).
+3. **The Hackathon Builder & Indie Hacker:** Needs rapid, high-impact concepts with turnkey technical blueprints and starter boilerplates.
 
-## 1.3 Value Propositions
-- **Zero-Generic Guarantee:** Every idea is contextualized with real-world enterprise nuances (edge cases, caching strategies, observability, testing).
-- **Interactive Visual Roadmaps:** Dynamic node-based graphs showing prerequisite concepts, phase checkpoints, and milestone verification tests.
-- **Resume Impact Engine:** Translates completed milestones directly into quantifiable, ATS-friendly action-oriented resume bullet points (e.g., *"Engineered distributed cache with Redis achieving <15ms p99 latency"*).
-- **Futuristic Cockpit UI:** Cyberpunk / Glassmorphic dark aesthetic with ultra-responsive micro-interactions, canvas graph visualizers, and live streaming AI responses.
+## 1.3 Core Value Propositions
+- **Zero-Generic Guarantee:** Every idea includes enterprise nuances: edge cases, concurrency, caching strategies, schema definitions, and observability.
+- **Interactive Visual Roadmap Canvas:** Interactive node graphs with milestone locks, code snippets, and automated verification tests.
+- **Resume Impact Engine:** Translates completed milestones directly into quantifiable, ATS-friendly action bullets (Google XYZ formula).
+- **Futuristic Obsidian Cyber-Glass UI:** Cyberpunk dark aesthetic with fluid micro-interactions, canvas node visualizers, and real-time streaming AI responses.
 
 ## 1.4 Functional Requirements (FR)
-- **FR-1: Multi-Parametric Ideation Engine:** Input skills, target tech stack, experience level (Beginner/Intermediate/Advanced/Staff), target job role (e.g., Full-Stack, AI Engineer, DevOps, Systems), and time commitment.
-- **FR-2: Dynamic Blueprint Decomposition:** Generates system architecture, folder structure, API specs, database schemas, edge-case analysis, and deployment strategy.
-- **FR-3: Step-by-Step Interactive Roadmap:** Node-based learning/building tree with progress tracking, task checkboxes, code snippets, and automated milestone completion validation.
-- **FR-4: Tech Stack Matcher & Trade-Off Analyzer:** Recommends libraries/frameworks and provides side-by-side pros/cons (e.g., PostgreSQL vs. MongoDB for this specific project).
-- **FR-5: Resume Bullet Generator:** Extracts quantifiable metrics and technical highlights from the generated blueprint to populate user portfolios.
-- **FR-6: Project Starter Scaffolder:** Generates downloadable boilerplates or GitHub repository creation workflows with pre-configured directory layouts, Dockerfiles, and CI/CD actions.
-- **FR-7: Community Discovery & Showcase:** Explore, bookmark, fork, upvote, and share community-generated project blueprints.
+- **FR-1: Multi-Parametric Ideation Engine:** Filter by programming languages, frameworks, difficulty (Beginner, Intermediate, Advanced, Staff Distributed), career target, and domain.
+- **FR-2: Deep Blueprint Generation:** Deconstructs selected projects into system architecture, folder layouts, database models, REST/WebSocket API specs, and edge-case mitigations.
+- **FR-3: Step-by-Step Interactive Roadmap:** Node-based graph showing prerequisites, deliverables, and progress tracking.
+- **FR-4: Tech Stack Matcher & Trade-Off Analyzer:** Recommends libraries with side-by-side pros/cons (e.g., FastAPI vs. Express, PostgreSQL vs. MongoDB).
+- **FR-5: Resume Bullet Generator:** Extracts quantifiable metrics and technical highlights from blueprints.
+- **FR-6: Project Starter Scaffolder:** Generates downloadable `.zip` bundles or GitHub repositories with pre-configured directory layouts, Dockerfiles, and CI/CD pipelines.
+- **FR-7: Community Showcase & Bookmarks:** Browse, bookmark, fork, and upvote community project blueprints.
 
 ## 1.5 Non-Functional Requirements (NFR)
-- **Performance:** Initial idea generation TTFT (Time-to-First-Token) $< 800\text{ ms}$ via streaming Server-Sent Events (SSE). Full blueprint generation within 3–5 seconds.
-- **Scalability:** Horizontal scaling of API gateways and worker queues capable of handling 10,000+ concurrent roadmap generations.
-- **Availability:** 99.9% uptime with multi-region redundancy and graceful degradation / fallback LLM provider switching (Gemini / OpenAI / Anthropic / Groq).
-- **Security:** Strict rate-limiting, JWT authentication, OAuth2 (GitHub/Google), AES-256 encryption at rest, secure prompt isolation preventing prompt injections.
-- **Accessibility & Responsiveness:** Fully responsive across mobile, tablet, ultra-wide screens; WCAG AA compliant contrast ratios with high-visibility neon/glow accents.
+- **Performance:** Time-To-First-Token (TTFT) $< 800\text{ ms}$ via Server-Sent Events (SSE). Full blueprint generation $< 4\text{ s}$.
+- **Scalability:** Python ASGI (Uvicorn/FastAPI) async event loops supporting 10,000+ concurrent roadmap streaming sessions.
+- **Availability:** 99.9% uptime with fallback AI provider handling (Gemini 1.5 Pro $\rightarrow$ Gemini 1.5 Flash $\rightarrow$ OpenAI/Groq).
+- **Security:** OAuth2 + JWT authentication, bcrypt password hashing, CORS protection, SQL injection prevention via SQLAlchemy 2.0 parameterized queries, and strict prompt sanitization.
+- **Responsiveness:** Fluid rendering across desktop, tablet, and mobile with high-performance 60fps canvas node rendering.
 
 ---
 
 # 2. Technical Requirements Document (TRD)
 
-## 2.1 Technology Stack Selection
+## 2.1 Technology Stack Architecture
 | Layer | Technologies & Tools | Justification |
 | :--- | :--- | :--- |
-| **Frontend Framework** | **Next.js 15+ (App Router) / React 19** | SSR/SSG capabilities, Server Components, Streaming UI, optimized V8 performance |
-| **Styling & Theming** | **TailwindCSS v3.4 + Vanilla CSS Custom Tokens + Framer Motion + Lucide Icons** | Ultra-slick cyberpunk/glassmorphism dark UI, smooth canvas transitions, fluid animations |
-| **Interactive Graph UI** | **React Flow (@xyflow/react)** | Canvas node-based visual roadmap editor and interactive tree graph visualization |
-| **Backend / API Engine** | **Node.js + Express / Fastify (TypeScript)** | Asynchronous I/O, native TypeScript types sharing with frontend, robust ecosystem |
-| **AI Orchestration** | **Google Gemini 1.5/2.0 API & LangChain/LangGraph** | High token throughput, large context window (1M+ tokens), low latency structured JSON generation |
-| **Primary Database** | **PostgreSQL (via Prisma ORM / Neon / Supabase)** | Relational integrity for user profiles, saved blueprints, roadmaps, social forks, and metrics |
-| **Caching & Queue** | **Redis (Upstash / Redis Cloud) + BullMQ** | Sub-millisecond prompt caching, token bucket rate limiting, and background export jobs |
-| **Search & Discovery** | **PostgreSQL Full-Text Search / pgvector** | Vector similarity search for matching existing community ideas and avoiding duplicate generations |
-| **Auth & Security** | **NextAuth.js / Supabase Auth / Custom JWT with bcrypt** | GitHub & Google OAuth login, role-based access control (Admin, User, Pro) |
-| **Deployment / CI/CD** | **Vercel (Frontend) + Render / Railway / Docker (Backend) + GitHub Actions** | Automated testing, linting, preview deployments, containerized execution |
+| **Frontend Framework** | **React (Vite + TypeScript)** | Lightning-fast HMR, lean bundle size, strong type safety, modern React 19 hooks |
+| **Styling & Theming** | **TailwindCSS v3.4 + Vanilla CSS Custom Tokens + Lucide Icons + Framer Motion** | Futuristic Obsidian Cyber-Glass aesthetic, fluid animations, custom glassmorphism |
+| **Interactive Graph UI** | **React Flow (`@xyflow/react`)** | High-performance interactive node canvas for roadmap visualization |
+| **State Management** | **Zustand + TanStack Query (React Query v5)** | Lightweight global state and optimized server-state caching & synchronization |
+| **Backend Framework** | **Python (FastAPI + Pydantic v2 + Uvicorn)** | High-performance async ASGI framework, native typing, automatic OpenAPI docs |
+| **Database & ORM** | **PostgreSQL + SQLAlchemy 2.0 (Async) + Alembic** | Robust relational model, JSONB indexing, async I/O via `asyncpg`, migration tracking |
+| **AI Orchestration** | **Google Gemini Python SDK (`google-genai` / `google-generativeai`)** | High context window (1M+ tokens), fast structured JSON generation, SSE streaming |
+| **Caching & Tasks** | **Redis + Python AsyncIO BackgroundTasks / Celery** | Sub-millisecond prompt caching, rate limiting, background starter kit compression |
+| **Auth & Security** | **Python-Jose / PyJWT + Passlib (Bcrypt) + OAuth2** | Secure JWT Bearer token authentication with GitHub & Google OAuth login |
+| **Deployment / CI/CD** | **Docker + Nginx + GitHub Actions + Render/Railway/AWS** | Containerized microservices, reverse proxying, automated test pipelines |
 
 ## 2.2 System Configurations & Environment Variables
 ```env
-# Server Configuration
-PORT=5000
-NODE_ENV=development
-CLIENT_URL=http://localhost:3000
+# Backend Server Configuration (.env)
+PROJECT_NAME="NextGen-Projector API"
+VERSION="1.0.0"
+API_V1_STR="/api/v1"
+PORT=8000
+HOST="0.0.0.0"
+DEBUG=True
+CORS_ORIGINS=["http://localhost:5173", "http://localhost:3000"]
 
-# Database Configuration
-DATABASE_URL=postgresql://postgres:password@localhost:5432/nextgen_projector?schema=public
+# PostgreSQL Database
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_DB=nextgen_projector
+DATABASE_URL="postgresql+asyncpg://postgres:postgres@localhost:5432/nextgen_projector"
 
-# Redis & Cache
-REDIS_URL=redis://default:password@localhost:6379
+# Redis Cache
+REDIS_URL="redis://localhost:6379/0"
 
 # Authentication & Security
-JWT_SECRET=your_super_secret_jwt_key_here
-JWT_EXPIRATION=7d
-GITHUB_CLIENT_ID=gh_client_xxx
-GITHUB_CLIENT_SECRET=gh_secret_xxx
-GOOGLE_CLIENT_ID=google_client_xxx
-GOOGLE_CLIENT_SECRET=google_secret_xxx
+SECRET_KEY="your-super-secret-hex-key-change-in-production"
+ALGORITHM="HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES=10080  # 7 Days
 
-# AI Service Providers
-GEMINI_API_KEY=AIzaSy...
-OPENAI_API_KEY=sk-... (optional fallback)
-AI_MODEL_PRIMARY=gemini-1.5-pro-latest
-AI_MODEL_FAST=gemini-1.5-flash-latest
+# AI Engine Credentials
+GEMINI_API_KEY="AIzaSy..."
+AI_PRIMARY_MODEL="gemini-1.5-pro-latest"
+AI_FAST_MODEL="gemini-1.5-flash-latest"
 
-# Rate Limiting & Limits
-RATE_LIMIT_MAX_REQUESTS=60
-RATE_LIMIT_WINDOW_MS=60000
-AI_GENERATION_DAILY_QUOTA_FREE=10
-AI_GENERATION_DAILY_QUOTA_PRO=100
+# GitHub OAuth (Optional / Production)
+GITHUB_CLIENT_ID="gh_client_xxx"
+GITHUB_CLIENT_SECRET="gh_secret_xxx"
 ```
 
 ---
@@ -110,46 +113,49 @@ AI_GENERATION_DAILY_QUOTA_PRO=100
 ## 3.1 DFD Level 0 (Context Diagram)
 ```mermaid
 graph TD
-    User([User / Developer]) <-->|1. Input Skills, Goals, Stack preferences\n2. View Generated Ideas, Blueprints, Roadmaps| System[NextGen-Projector System]
-    System <-->|Prompt Context & Extraction Schema / Streamed Responses| AI[AI Engine - Gemini / OpenAI]
-    System <-->|OAuth Profile & Repo Forking| GitHub[GitHub API]
-    System <-->|Persist User Progress, Blueprints, Likes| DB[(PostgreSQL Database)]
-    System <-->|Rate Limit & Cache Hits| Cache[(Redis Cache)]
+    User([User / Developer]) <-->|1. Submit Skills, Career Target, Stack\n2. View Generated Ideas, Interactive Roadmaps, Blueprints| System[NextGen-Projector (React + FastAPI)]
+    System <-->|Prompts & Schema Constraints / Streaming Token Deltas| GeminiAI[Google Gemini 1.5 Pro AI]
+    System <-->|Async Queries & Relational Persistence| Postgres[(PostgreSQL 16 Database)]
+    System <-->|Prompt Cache Hits & Rate Limits| RedisCache[(Redis Cache)]
+    System <-->|OAuth Identity & Repository Creation| GitHub[GitHub API]
 ```
 
 ## 3.2 DFD Level 1 (Major Subsystems Data Flow)
 ```mermaid
 graph TD
-    User([User]) -->|Inputs Form Data| FormHandler[1. Input Validation & Enrichment]
-    FormHandler -->|Check Cached Prompts| CacheLookup{Cache Hit?}
-    CacheLookup -->|Yes| FastReturn[Return Cached Ideas] --> User
-    CacheLookup -->|No| PromptBuilder[2. Dynamic Prompt Orchestrator]
-    PromptBuilder -->|Optimized System Prompt + JSON Schema| LLMGateway[3. AI LLM Gateway (Gemini)]
-    LLMGateway -->|Raw Stream / Tokens| StreamParser[4. Stream Parser & Validator]
-    StreamParser -->|Validate JSON Structure| PersistEngine[5. DB Persistence & Cache Write]
-    PersistEngine --> DB[(PostgreSQL)]
-    PersistEngine --> Cache[(Redis)]
-    StreamParser -->|Stream Server-Sent Events| Visualizer[6. Interactive Canvas & UI Renderer]
-    Visualizer --> User
+    User([User]) -->|Input Matrix Form| ReactClient[React 19 Frontend SPA]
+    ReactClient -->|POST /api/v1/ai/generate-ideas| FastAPIGateway[FastAPI API Gateway]
+    FastAPIGateway --> AuthMiddleware{Verify JWT / Rate Limit}
+    AuthMiddleware -->|Pass| CacheService{Check Redis Cache}
+    CacheService -->|Hit| ReturnCache[Return Cached Ideas] --> ReactClient
+    CacheService -->|Miss| PromptEngine[Prompt Construction Engine]
+    PromptEngine --> GeminiService[Gemini AI Async Client]
+    GeminiService -->|Structured JSON Response| Validator[Pydantic v2 Schema Validator]
+    Validator --> DBWriter[Async SQLAlchemy DB Writer]
+    DBWriter --> Postgres[(PostgreSQL Database)]
+    DBWriter --> Redis[(Redis Cache)]
+    Validator --> ResponsePayload[JSON Response] --> ReactClient
+    ReactClient --> VisualRenderer[React Flow Interactive Canvas & Blueprint Studio]
 ```
 
-## 3.3 DFD Level 2 (AI Blueprint Decomposition & Roadmap Flow)
+## 3.3 DFD Level 2 (Streaming Blueprint & Roadmap Decomposition)
 ```mermaid
 graph TD
-    IdeaID[Selected Idea ID] --> BlueprintReq[Blueprint Generator Service]
-    BlueprintReq --> ContextAggregator[Aggregate Target Stack, Difficulty, Edge Cases]
-    ContextAggregator --> AIPrompt[Inject Architecture Blueprint Prompt]
-    AIPrompt --> LLM[Gemini 1.5 Pro]
-    LLM --> JSONStructure{Valid Blueprint JSON?}
-    JSONStructure -->|No| Fixer[Schema Auto-Repair Engine] --> JSONStructure
-    JSONStructure -->|Yes| Decompose[Decompose into 5 Modules]
-    Decompose --> Mod1[Architecture & Folder Structure]
-    Decompose --> Mod2[Database Schema & ERD Model]
-    Decompose --> Mod3[Step-by-Step Milestone Graph]
-    Decompose --> Mod4[API Route Specifications]
-    Decompose --> Mod5[Resume Impact Bullet Points]
-    Mod1 & Mod2 & Mod3 & Mod4 & Mod5 --> StoreBlueprint[(Save Blueprint to DB)]
-    StoreBlueprint --> UIStream[Deliver to Interactive Viewer]
+    ReactClient([React Client]) -->|GET /api/v1/ai/stream-blueprint/{idea_id}| SSEHandler[FastAPI SSE Streaming Endpoint]
+    SSEHandler --> FetchIdea[Load Idea Context from PostgreSQL]
+    FetchIdea --> BuildDeepPrompt[Construct Multi-Stage Architecture Prompt]
+    BuildDeepPrompt --> StreamLLM[Gemini Async Token Streamer]
+    StreamLLM --> ChunkParser[Chunk Parser & Section Delimiter]
+    
+    ChunkParser -->|event: architecture| SSE1[Stream System Architecture & Diagram]
+    ChunkParser -->|event: schemas| SSE2[Stream Database ERD & Models]
+    ChunkParser -->|event: apis| SSE3[Stream REST & WebSocket Specs]
+    ChunkParser -->|event: roadmap| SSE4[Stream Interactive Milestone Nodes]
+    ChunkParser -->|event: resume| SSE5[Stream ATS Resume Bullets]
+    ChunkParser -->|event: done| SSE6[Stream Completion Event]
+    
+    SSE1 & SSE2 & SSE3 & SSE4 & SSE5 & SSE6 --> EventStream[text/event-stream] --> ReactClient
+    SSE6 --> AsyncPersist[Async Background DB Task: Save ProjectBlueprint & Milestones] --> Postgres[(PostgreSQL)]
 ```
 
 ---
@@ -159,191 +165,177 @@ graph TD
 ## 4.1 System Architecture Overview
 ```mermaid
 graph TB
-    subgraph Client Tier
-        WebClient[Next.js 15 Client App]
-        ReactFlowUI[Interactive Node Graph Visualizer]
-        StateStore[Zustand State Store]
+    subgraph Client Tier [React Frontend SPA]
+        ReactApp[React 19 + TypeScript + Vite]
+        ZustandStore[Zustand State Store]
+        ReactFlowView[React Flow Roadmap Canvas]
+        QueryClient[TanStack Query v5 Cache]
     end
 
-    subgraph Edge & Gateway Tier
-        ReverseProxy[Nginx / Cloudflare CDN]
-        RateLimiter[Redis Rate Limiting Middleware]
-        AuthGuard[JWT / OAuth2 Guard]
+    subgraph Edge & API Tier [Python FastAPI Backend]
+        ReverseProxy[Nginx / Cloudflare]
+        FastAPIApp[FastAPI ASGI Application]
+        RateLimiter[SlowAPI / Redis Rate Limiter]
+        AuthHandler[OAuth2 + PyJWT Guard]
     end
 
-    subgraph Application Service Tier
-        API[Express.js / Fastify API Server]
+    subgraph Business Logic Tier [Python Services]
         IdeaService[Idea Generation Service]
-        BlueprintService[Blueprint & Schema Service]
-        RoadmapService[Visual Roadmap Generator]
-        ResumeService[Resume Bullet Optimizer]
-        ScaffoldingService[Project Zip / GitHub Exporter]
+        BlueprintService[Blueprint Orchestration Service]
+        RoadmapService[Visual Node Graph Service]
+        ResumeService[Resume Optimizer Service]
+        ScaffoldService[Project Starter Scaffolder]
     end
 
-    subgraph AI Gateway & Engine Tier
+    subgraph AI Gateway Tier
         PromptEngine[Prompt Builder & Context Injector]
-        LLMManager[LLM Provider Failover Controller]
-        GeminiPro[Google Gemini 1.5 Pro]
-        GeminiFlash[Google Gemini 1.5 Flash]
-        OpenAIFallback[OpenAI GPT-4o Fallback]
+        GeminiClient[Google Gemini 1.5 Pro / Flash Async]
+        FailoverEngine[LLM Fallback Controller]
     end
 
-    subgraph Data & Storage Tier
-        Postgres[(PostgreSQL Relational DB)]
-        RedisCache[(Redis Cache & Session Store)]
-        S3Bucket[(AWS S3 / Cloudflare R2 - Export Bundles)]
+    subgraph Persistence & Infrastructure Tier
+        Postgres[(PostgreSQL 16 Relational DB)]
+        Redis[(Redis Cache & Session Store)]
+        FileStore[(Local Storage / S3 Starter Zip Bundles)]
     end
 
-    WebClient --> ReverseProxy
-    ReverseProxy --> RateLimiter --> AuthGuard --> API
-    API --> IdeaService & BlueprintService & RoadmapService & ResumeService & ScaffoldingService
+    ReactApp --> ReverseProxy
+    ReverseProxy --> FastAPIApp
+    FastAPIApp --> RateLimiter --> AuthHandler
+    FastAPIApp --> IdeaService & BlueprintService & RoadmapService & ResumeService & ScaffoldService
     IdeaService & BlueprintService & RoadmapService & ResumeService --> PromptEngine
-    PromptEngine --> LLMManager
-    LLMManager --> GeminiPro
-    LLMManager -.->|Failover| GeminiFlash
-    LLMManager -.->|Backup| OpenAIFallback
-    API --> Postgres
-    API --> RedisCache
-    ScaffoldingService --> S3Bucket
+    PromptEngine --> GeminiClient
+    GeminiClient -.-> FailoverEngine
+    FastAPIApp --> Postgres
+    FastAPIApp --> Redis
+    ScaffoldService --> FileStore
 ```
 
-## 4.2 Architectural Layers & Patterns
-1. **Presentation Layer:** Next.js 15 App router with Server Components for SEO and fast TTFB, Client Components for dynamic canvas graphs and real-time streaming updates.
-2. **API & Gateway Layer:** Modular RESTful + SSE architecture, central error handling, schema validation with Zod, CORS and Helmet security headers.
-3. **AI Pipeline & Prompt Engineering Layer:**
-   - **Few-Shot Template Engine:** Injects industry best practices, current-year technology trends, architectural patterns (Microservices, Event-Driven, Serverless, Monolith).
-   - **Streaming Tokenizer:** Uses SSE (`text/event-stream`) to pipe token deltas to the frontend for zero-latency feeling.
-   - **Self-Healing Output Validator:** Verifies schema structure against strict JSON schema definitions; re-prompts if corrupt.
-4. **Data & Persistence Layer:** Relational models with cascade updates, optimistic UI caching, and indexed foreign keys for lightning-fast queries.
+## 4.2 System Components & Responsibilities
+1. **React Frontend SPA:** Single-Page Application with instant client-side routing, optimistic UI updates, interactive canvas drag/zoom, syntax-highlighted code viewer, and dark cyber-glass UI.
+2. **FastAPI Backend Application:** Fully asynchronous REST + SSE endpoints utilizing Python's `asyncio` event loop, Pydantic v2 data validation, and automated Swagger/OpenAPI documentation at `/docs`.
+3. **SQLAlchemy 2.0 Async Data Layer:** Database access layer utilizing `asyncpg` drivers, connection pooling, and declarative models with JSONB support.
+4. **AI Generation Pipeline:** Integrates with Google Gemini models using structured system prompts with strict JSON Schema output guarantees.
 
 ---
 
 # 5. Low-Level Design (LLD)
 
-## 5.1 Core Class / Service Diagram
+## 5.1 Python Backend Class / Module Structure
 ```mermaid
 classDiagram
-    class AIOrchestrator {
-        +generateIdeas(params: IdeaRequestDto): Promise<IdeaResponse[]>
-        +generateBlueprint(ideaId: string): Promise<BlueprintResponse>
-        +generateRoadmapGraph(blueprintId: string): Promise<RoadmapGraph>
-        +generateResumeBullets(ideaId: string): Promise<ResumeBullet[]>
-        -callLLMWithRetry(prompt: string, schema: object): Promise<string>
+    class AIService {
+        +generate_ideas(params: IdeaRequestSchema): List[GeneratedIdeaSchema]
+        +stream_blueprint(idea_id: UUID): AsyncGenerator[str, None]
+        +generate_resume_bullets(blueprint_id: UUID): List[ResumeBulletSchema]
+        -call_gemini_async(prompt: str, json_schema: dict): dict
     }
 
     class PromptBuilder {
-        +buildIdeaPrompt(params: IdeaRequestDto): string
-        +buildBlueprintPrompt(idea: ProjectIdea): string
-        +buildScaffoldPrompt(blueprint: ProjectBlueprint): string
+        +build_idea_prompt(params: IdeaRequestSchema): str
+        +build_blueprint_prompt(idea: ProjectIdea): str
+        +build_scaffold_prompt(blueprint: ProjectBlueprint): str
+    }
+
+    class RoadmapGraphService {
+        +build_react_flow_nodes(milestones: List[RoadmapMilestone]): dict
+        +update_milestone_progress(user_id: UUID, milestone_id: UUID, status: str): UserProgress
+        +get_user_completion_stats(user_id: UUID, blueprint_id: UUID): dict
+    }
+
+    class ScaffoldingService {
+        +generate_starter_zip(blueprint_id: UUID): BytesIO
+        +create_github_repo(user_token: str, blueprint_id: UUID, repo_name: str): str
     }
 
     class ProjectController {
-        +getIdeas(req: Request, res: Response): Promise<void>
-        +streamBlueprint(req: Request, res: Response): Promise<void>
-        +saveBlueprint(req: Request, res: Response): Promise<void>
-        +updateMilestoneProgress(req: Request, res: Response): Promise<void>
-        +exportStarterKit(req: Request, res: Response): Promise<void>
+        +post_generate_ideas()
+        +get_stream_blueprint()
+        +post_save_blueprint()
+        +post_toggle_milestone()
+        +post_export_zip()
     }
 
-    class RoadmapService {
-        +convertToReactFlowGraph(milestones: Milestone[]): ReactFlowGraph
-        +calculateCompletionPercentage(userId: string, roadmapId: string): number
-        +unlockNextNode(userId: string, nodeId: string): void
-    }
-
-    class ScaffoldingEngine {
-        +generateZipArchive(blueprint: ProjectBlueprint): Promise<Buffer>
-        +pushToGitHub(userId: string, repoName: string, blueprint: ProjectBlueprint): Promise<string>
-    }
-
-    ProjectController --> AIOrchestrator
-    ProjectController --> RoadmapService
-    ProjectController --> ScaffoldingEngine
-    AIOrchestrator --> PromptBuilder
+    ProjectController --> AIService
+    ProjectController --> RoadmapGraphService
+    ProjectController --> ScaffoldingService
+    AIService --> PromptBuilder
 ```
 
-## 5.2 Core Data Interfaces (TypeScript Types)
-```typescript
-export type DifficultyLevel = 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED' | 'STAFF_DISTRIBUTED';
-export type CareerGoal = 'FRONTEND_DEV' | 'BACKEND_ENGINEER' | 'FULLSTACK_ARCHITECT' | 'AI_ML_ENGINEER' | 'DEVOPS_SRE' | 'WEB3_DEV';
+## 5.2 Python Pydantic Models & Schemas
+```python
+from pydantic import BaseModel, Field
+from typing import List, Optional, Dict, Any
+from enum import Enum
+import uuid
 
-export interface IdeaRequestParams {
-  skills: string[];
-  preferredStack: string[];
-  difficulty: DifficultyLevel;
-  careerGoal: CareerGoal;
-  domainInterest?: string; // e.g. "Fintech", "Healthtech", "DevTools", "AI Agents"
-  timeEstimateHours?: number;
-}
+class DifficultyLevel(str, Enum):
+    BEGINNER = "BEGINNER"
+    INTERMEDIATE = "INTERMEDIATE"
+    ADVANCED = "ADVANCED"
+    STAFF_DISTRIBUTED = "STAFF_DISTRIBUTED"
 
-export interface GeneratedIdea {
-  id: string;
-  title: string;
-  tagline: string;
-  difficulty: DifficultyLevel;
-  matchScorePercentage: number;
-  whyUnique: string;
-  industryRelevance: string;
-  recommendedTechStack: {
-    frontend: string[];
-    backend: string[];
-    database: string[];
-    aiMl?: string[];
-    devops: string[];
-  };
-  keyFeatures: string[];
-  estimatedCompletionWeeks: number;
-}
+class CareerGoal(str, Enum):
+    FRONTEND_DEV = "FRONTEND_DEV"
+    BACKEND_ENGINEER = "BACKEND_ENGINEER"
+    FULLSTACK_ARCHITECT = "FULLSTACK_ARCHITECT"
+    AI_ML_ENGINEER = "AI_ML_ENGINEER"
+    DEVOPS_SRE = "DEVOPS_SRE"
+    SYSTEMS_ENGINEER = "SYSTEMS_ENGINEER"
 
-export interface ProjectBlueprint {
-  id: string;
-  ideaId: string;
-  systemArchitecture: {
-    overview: string;
-    style: 'MONOLITH' | 'MICROSERVICES' | 'EVENT_DRIVEN' | 'SERVERLESS' | 'RAG_AGENTIC';
-    diagramMermaid: string;
-    components: Array<{
-      name: string;
-      role: string;
-      tech: string;
-      communication: string;
-    }>;
-  };
-  folderStructure: string;
-  databaseSchema: {
-    type: 'POSTGRESQL' | 'MONGODB' | 'HYBRID';
-    erdMermaid: string;
-    models: Array<{
-      tableName: string;
-      fields: Array<{ name: string; type: string; constraints: string }>;
-    }>;
-  };
-  apiSpecifications: Array<{
-    method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
-    endpoint: string;
-    description: string;
-    requestBodySample?: object;
-    responseBodySample: object;
-  }>;
-  edgeCasesAndSecurity: Array<{
-    risk: string;
-    mitigationStrategy: string;
-  }>;
-  resumeBullets: string[];
-}
+class IdeaRequestSchema(BaseModel):
+    skills: List[str] = Field(..., min_items=1, example=["React", "Python", "PostgreSQL"])
+    preferred_stack: List[str] = Field(default=[], example=["FastAPI", "React", "Redis"])
+    difficulty: DifficultyLevel = DifficultyLevel.ADVANCED
+    career_goal: CareerGoal = CareerGoal.FULLSTACK_ARCHITECT
+    domain_interest: Optional[str] = Field(None, example="AI Agents & DevTools")
+    time_commitment_weeks: Optional[int] = Field(4, ge=1, le=16)
 
-export interface RoadmapNode {
-  id: string;
-  phaseNumber: number;
-  title: string;
-  description: string;
-  prerequisites: string[];
-  deliverable: string;
-  verificationCriteria: string[];
-  codeSnippets: Array<{ title: string; language: string; code: string }>;
-  isCompleted: boolean;
-  status: 'LOCKED' | 'AVAILABLE' | 'IN_PROGRESS' | 'COMPLETED';
-}
+class RecommendedTechStack(BaseModel):
+    frontend: List[str]
+    backend: List[str]
+    database: List[str]
+    ai_ml: Optional[List[str]] = []
+    devops: List[str]
+
+class GeneratedIdeaSchema(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    title: str
+    tagline: str
+    difficulty: DifficultyLevel
+    match_score_percentage: int
+    why_unique: str
+    industry_relevance: str
+    recommended_tech_stack: RecommendedTechStack
+    key_features: List[str]
+    estimated_completion_weeks: int
+
+class CodeSnippetSchema(BaseModel):
+    title: str
+    language: str
+    code: str
+
+class MilestoneNodeSchema(BaseModel):
+    id: str
+    phase_number: int
+    title: str
+    description: str
+    deliverable: str
+    prerequisites: List[str]
+    verification_criteria: List[str]
+    code_snippets: List[CodeSnippetSchema]
+    status: str = "LOCKED"  # LOCKED, AVAILABLE, IN_PROGRESS, COMPLETED
+
+class ProjectBlueprintSchema(BaseModel):
+    id: str
+    idea_id: str
+    system_architecture: Dict[str, Any]
+    folder_structure: str
+    database_schema: Dict[str, Any]
+    api_specifications: List[Dict[str, Any]]
+    edge_cases: List[Dict[str, str]]
+    resume_bullets: List[str]
+    milestones: List[MilestoneNodeSchema]
 ```
 
 ---
@@ -351,74 +343,83 @@ export interface RoadmapNode {
 # 6. UI / Wireframes & Futuristic Design System
 
 ## 6.1 Design System & Aesthetic Foundation
-- **Theme:** "Obsidian Cyber-Glass" (Deep OLED blacks `#07090E`, Neon Cyan `#00F0FF`, Galactic Purple `#8A2BE2`, Emerald Glow `#00FF9D`, Laser Amber `#FFB800`).
-- **Surface Elevation:** Translucent acrylic panels with `backdrop-filter: blur(16px)`, `1px border: rgba(255, 255, 255, 0.08)`, and dynamic radial gradient glows on hover.
+- **Theme Palette:** "Obsidian Cyber-Glass"
+  - Background Base: `#05070B` (Deep OLED Space Black)
+  - Surface Glass: `rgba(13, 18, 28, 0.7)` with `backdrop-filter: blur(16px)`
+  - Accent Primary: `#00F0FF` (Electric Cyan Neon)
+  - Accent Secondary: `#8A2BE2` (Galactic Violet Glow)
+  - Accent Success: `#00FF9D` (Matrix Emerald)
+  - Accent Warning: `#FFB800` (Cyber Amber)
+  - Border Accents: `rgba(255, 255, 255, 0.08)` and glowing gradient borders
 - **Typography:**
-  - Headings: `Outfit`, `Space Grotesk`, or `Syne` (Geometric, Futuristic, High-Tech).
-  - Body & UI: `Inter` or `Plus Jakarta Sans` (Crisp readability).
-  - Code & Monospace: `JetBrains Mono` or `Fira Code`.
-- **Interactive Micro-Animations:**
-  - Particle starfields & glowing ambient grid background.
-  - Hover tilt with 3D perspective shifts on idea cards.
-  - Live animated pulse indicators on active streaming nodes.
-  - Confetti and neon laser blast on milestone completion.
+  - Headings: `Outfit` / `Space Grotesk`
+  - Body & UI: `Inter` / `Plus Jakarta Sans`
+  - Code Snippets: `JetBrains Mono` / `Fira Code`
 
-## 6.2 Application Navigation & Screen Layout
+## 6.2 Application Wireframe & Component Hierarchy
+
+### Screen 1: The Input Matrix & Ideation Hub
 ```
 +-----------------------------------------------------------------------------------------+
-| [⚡ NEXTGEN-PROJECTOR]   [Explore Ideas]  [My Workspace]  [Community Showcase]  [Sign In / Profile] |
+| [⚡ NEXTGEN-PROJECTOR]   [Explore Ideas]  [My Workspaces]  [Showcase]   [Login / Profile] |
 +-----------------------------------------------------------------------------------------+
 |                                                                                         |
-|  🌟 AI-POWERED ARCHITECTURE & CAPSTONE COCKPIT                                         |
-|  "Turn your tech stack into industry-shattering resume projects in seconds."             |
+|   🪐 AI-POWERED ARCHITECTURE COCKPIT                                                    |
+|   "Architect industry-grade capstones and portfolio-defining systems."                  |
 |                                                                                         |
-|  +-----------------------------------------------------------------------------------+  |
-|  | 🛠️ INPUT MATRIX CONFIGURATOR                                                      |  |
-|  | Skills: [React (x)] [Node.js (x)] [TypeScript (x)] [Postgres (x)] [+ Add Skill]    |  |
-|  | Target Stack: [Next.js, Tailwind, LangChain, Redis]                               |  |
-|  | Level: [ ] Beginner   [ ] Intermediate   [*] Advanced   [ ] Staff Distributed     |  |
-|  | Career Target: [*] Full-Stack AI Engineer    Domain: [*] AI Agents & DevTools     |  |
-|  |                                                                                   |  |
-|  |                             [ 🚀 GENERATE BLUEPRINT IDEAS ]                       |  |
-|  +-----------------------------------------------------------------------------------+  |
+|   +---------------------------------------------------------------------------------+   |
+|   | 🛠️ INPUT MATRIX CONFIGURATOR                                                    |   |
+|   | Your Skills:       [ React (x) ] [ Python (x) ] [ PostgreSQL (x) ] [+ Add Skill] |   |
+|   | Target Tech Stack: [ FastAPI, React 19, Tailwind, Redis, Gemini AI ]             |   |
+|   | Difficulty:        [ ] Beginner   [ ] Intermediate   [*] Advanced   [ ] Staff    |   |
+|   | Target Role:       [*] Full-Stack AI Architect    Domain: [*] AI DevTools & Agents|   |
+|   |                                                                                 |   |
+|   |                          [ 🚀 GENERATE BLUEPRINTS ]                             |   |
+|   +---------------------------------------------------------------------------------+   |
 |                                                                                         |
-|  🔥 GENERATED TRENDING PROJECT IDEAS                                                    |
-|  +---------------------------+ +---------------------------+ +------------------------+ |
-|  | 💎 Autonomous PR Reviewer | | 🛡️ Distributed Zero-Trust | | ⚡ Real-Time Edge Video | |
-|  | Multi-Agent CI/CD Bot     | | Auth Mesh & Audit Logger  | | Analytics Pipeline     | |
-|  | Match Score: 98% ⭐       | | Match Score: 94% ⭐       | | Match Score: 91% ⭐    | |
-|  | Stack: Next/TS/Gemini/Go  | | Stack: Rust/Redis/Postgres| | Stack: WebRTC/Wasm/Node| |
-|  | [ View Deep Blueprint → ] | | [ View Deep Blueprint → ] | | [ View Deep Blueprint →]| |
-|  +---------------------------+ +---------------------------+ +------------------------+ |
+|   🔥 GENERATED TRENDING PROJECT IDEAS                                                   |
+|   +---------------------------+ +---------------------------+ +-----------------------+ |
+|   | 🤖 Autonomous Code Agent  | | 🛡️ Distributed Real-Time  | | ⚡ High-Throughput    | |
+|   | Self-healing CI/CD Bot    | | Zero-Trust Audit Mesh     | | Vector RAG Pipeline   | |
+|   | Match Score: 98% ⭐       | | Match Score: 95% ⭐       | | Match Score: 92% ⭐   | |
+|   | Stack: React/FastAPI/Pg   | | Stack: Python/Redis/Pg    | | Stack: React/Qdrant/Py| |
+|   | [ View Deep Blueprint → ] | | [ View Deep Blueprint → ] | | [ View Deep Blueprint→| |
+|   +---------------------------+ +---------------------------+ +-----------------------+ |
 +-----------------------------------------------------------------------------------------+
 ```
 
-## 6.3 Interactive Node Graph Visualizer (Roadmap Canvas)
+### Screen 2: Interactive Node Graph & Blueprint Studio
 ```
 +-----------------------------------------------------------------------------------------+
-| 🗺️ INTERACTIVE PROJECT ROADMAP CANVAS: "Autonomous PR Reviewer AI Agent"                 |
-| [ 🔄 Auto-Layout ] [ 💾 Save Roadmap ] [ 📥 Export Starter Code ] [ 📋 Copy Resume Bullets ]|
+| 🗺️ ROADMAP CANVAS: "Autonomous Code Agent (Self-Healing CI/CD Bot)"                      |
+| [ 🔄 Auto-Layout ] [ 💾 Save Workspace ] [ 📦 Download Starter Zip ] [ 📋 Resume Bullets]|
 +-----------------------------------------------------------------------------------------+
 |                                                                                         |
-|    [ (1) Architecture & Setup ] ---> [ (2) GitHub Webhook Ingestion ]                  |
-|               ✅ COMPLETED                           ⏳ IN PROGRESS                     |
-|                    |                                       |                            |
-|                    v                                       v                            |
-|    [ (3) AST & Vector Embeddings ] -> [ (4) Multi-Agent Critique Loop ]                 |
-|               🔒 LOCKED                                🔒 LOCKED                        |
-|                    |                                       |                            |
-|                    +------------------->+<-----------------+                            |
-|                                         |                                               |
-|                                         v                                               |
-|                       [ (5) Automated PR Commenting & Bot CI/CD ]                       |
-|                                         🔒 LOCKED                                       |
+|     +---------------------------+        +---------------------------+                  |
+|     | (1) Architecture & Setup  | -----> | (2) Webhook Event Engine  |                  |
+|     |        ✅ COMPLETED       |        |        ⏳ IN PROGRESS     |                  |
+|     +---------------------------+        +---------------------------+                  |
+|                   |                                    |                                |
+|                   v                                    v                                |
+|     +---------------------------+        +---------------------------+                  |
+|     | (3) AST & Vector Embeddings|-----> | (4) Multi-Agent AI Loop   |                  |
+|     |        🔒 LOCKED          |        |        🔒 LOCKED          |                  |
+|     +---------------------------+        +---------------------------+                  |
+|                   |                                    |                                |
+|                   +----------------->+<----------------+                                |
+|                                      |                                                  |
+|                                      v                                                  |
+|                        +---------------------------+                                    |
+|                        | (5) Automated PR Fixer Bot|                                    |
+|                        |        🔒 LOCKED          |                                    |
+|                        +---------------------------+                                    |
 |                                                                                         |
 |  +-----------------------------------------------------------------------------------+  |
-|  | 📌 ACTIVE NODE INSPECTOR: Phase 2 - GitHub Webhook Ingestion Engine                |  |
-|  | Objective: Implement secure HMAC SHA256 payload verification and event dispatchers|  |
-|  | Deliverable: POST /api/webhooks/github endpoint with retry buffer                 |  |
-|  | [✓] Verify Webhook Secret    [ ] Rate Limit with Redis    [ ] Queue in BullMQ       |  |
-|  | Code Boilerplate: (View TS snippet) | [ Mark Milestone Complete ]                 |  |
+|  | 📌 ACTIVE NODE INSPECTOR: Phase 2 - Webhook Event Ingestion Engine                |  |
+|  | Objective: Build FastAPI async webhook receiver with HMAC signature verification  |  |
+|  | Deliverable: POST /api/v1/webhooks/github endpoint with retry buffer & Redis cache |  |
+|  | [✓] HMAC SHA256 Verification    [ ] Redis Idempotency Buffer   [ ] Background Task|  |
+|  | Code Snippet: (View Python FastAPI snippet) | [ Mark Milestone Complete ]         |  |
 |  +-----------------------------------------------------------------------------------+  |
 +-----------------------------------------------------------------------------------------+
 ```
@@ -427,51 +428,51 @@ export interface RoadmapNode {
 
 # 7. User Stories & Acceptance Criteria
 
-### Epic 1: Multi-Parametric Idea Discovery
-- **US-1.1: Skill & Stack Customization**
-  - *As a* developer,
-  - *I want to* enter my current languages, target tech stack, and experience level,
-  - *So that* I get customized project ideas that directly leverage and push my current capabilities.
+### Epic 1: Multi-Parametric Ideation Engine
+- **US-1.1: Skill Matrix & Target Calibration**
+  - *As a* software engineer,
+  - *I want to* specify my technical skills, target technologies, difficulty level, and career aspirations,
+  - *So that* I receive tailored, non-generic project ideas that challenge me and look impressive on my resume.
   - **Acceptance Criteria:**
-    - User can add/remove tags for 50+ languages/frameworks.
-    - System validates minimum 1 skill tag.
-    - Generation responds within $< 3$ seconds with at least 3 distinct, non-generic concepts.
-- **US-1.2: Career & Domain Alignment**
-  - *As a* job seeker targeting high-frequency trading or AI engineering,
-  - *I want to* filter ideas by industry domain (Fintech, Healthcare, AI Agents, DevTools),
-  - *So that* my portfolio speaks directly to my target industry recruiters.
+    - User can add and remove skills with auto-suggestions for 60+ technologies.
+    - System enforces at least 1 skill before generation.
+    - AI generation responds with 3 distinct ideas in $< 3$ seconds.
+- **US-1.2: Industry Domain Selection**
+  - *As an* applicant targeting specific tech verticals (Fintech, Healthtech, AI Agents, DevTools, CyberSecurity),
+  - *I want to* filter idea generation by industry domain,
+  - *So that* the project directly matches job descriptions I am targeting.
 
-### Epic 2: Deep Technical Blueprint Engine
-- **US-2.1: Architectural Breakdown**
-  - *As an* engineer,
-  - *I want to* see detailed system architecture, component diagrams, and folder layouts,
-  - *So that* I know how to design the project from scratch without getting stuck on folder structure.
-  - **Acceptance Criteria:**
-    - Generates complete ASCII / Mermaid diagram for the system.
-    - Provides realistic multi-file folder structure with explanations for each module.
-- **US-2.2: Edge Cases & Security Guidance**
-  - *As a* candidate preparing for technical interviews,
-  - *I want* the blueprint to highlight real-world edge cases, failure modes, and mitigation strategies,
-  - *So that* I can discuss these architectural trade-offs during interviews.
-
-### Epic 3: Interactive Visual Roadmap
-- **US-3.1: Visual Node Graph Progression**
-  - *As a* visual learner,
-  - *I want* the project broken into phased visual milestone nodes,
-  - *So that* I can tackle complex architectures incrementally.
-  - **Acceptance Criteria:**
-    - Interactive canvas with pan, zoom, drag, and node clicks.
-    - Nodes have clear prerequisites and status tags (Locked, Available, In-Progress, Completed).
-    - Unlocking dependencies recalculates overall project completion percentage.
-
-### Epic 4: Resume Impact & Scaffolding
-- **US-4.1: ATS-Optimized Resume Bullet Points**
-  - *As an* applicant,
-  - *I want to* generate quantified, XYZ-formula resume bullet points for the project,
-  - *So that* I can immediately paste high-impact descriptions into my CV.
-- **US-4.2: Starter Kit Boilerplate Export**
+### Epic 2: Deep Technical Blueprint Decomposition
+- **US-2.1: System Architecture & Schemas**
   - *As a* builder,
-  - *I want to* download a pre-configured `.zip` or create a GitHub repo with `README.md`, configs, and directory layout,
+  - *I want* a complete system architecture breakdown, folder structure, database schema, and REST API specification,
+  - *So that* I can implement the project with production-grade engineering standards.
+  - **Acceptance Criteria:**
+    - Generates Mermaid diagram for architecture and ERD for PostgreSQL models.
+    - Provides explicit RESTful API routes with request/response sample JSON payloads.
+- **US-2.2: Edge Cases & Trade-Off Analysis**
+  - *As an* interviewee,
+  - *I want* the blueprint to document real-world edge cases, concurrency challenges, and architectural trade-offs,
+  - *So that* I can speak fluently about design decisions in technical interviews.
+
+### Epic 3: Interactive Visual Roadmap Canvas
+- **US-3.1: React Flow Graph Progression**
+  - *As a* visual learner,
+  - *I want to* navigate my project as an interactive node graph with phases, dependencies, and code snippets,
+  - *So that* I can track my progress step-by-step without feeling overwhelmed.
+  - **Acceptance Criteria:**
+    - Graph supports pan, zoom, drag, and node selection.
+    - Nodes unlock progressively as preceding milestone prerequisites are satisfied.
+    - Dynamic progress bar updates in real time.
+
+### Epic 4: Resume Impact Simulator & Scaffolder
+- **US-4.1: ATS-Friendly Action Bullets**
+  - *As a* job seeker,
+  - *I want to* generate Google XYZ-formula resume bullet points highlighting technical decisions and quantifiable outcomes,
+  - *So that* I can paste them onto my resume.
+- **US-4.2: Starter Kit Boilerplate Export**
+  - *As a* developer,
+  - *I want to* download a pre-configured `.zip` containing directory structure, `requirements.txt`/`package.json`, `README.md`, Dockerfile, and `.env.example`,
   - *So that* I can start coding in under 60 seconds.
 
 ---
@@ -481,21 +482,22 @@ export interface RoadmapNode {
 ## 8.1 Entity Relationship Diagram (ERD)
 ```mermaid
 erDiagram
-    USER ||--o{ PROJECT_IDEA : generates
-    USER ||--o{ SAVED_BLUEPRINT : saves
+    USER ||--o{ PROJECT_IDEA : creates
+    USER ||--o{ SAVED_BLUEPRINT : bookmarks
     USER ||--o{ USER_PROGRESS : tracks
     USER ||--o{ BLUEPRINT_LIKE : likes
     
-    PROJECT_IDEA ||--|| PROJECT_BLUEPRINT : has_deep_spec
+    PROJECT_IDEA ||--|| PROJECT_BLUEPRINT : has_blueprint
     PROJECT_BLUEPRINT ||--|{ ROADMAP_MILESTONE : contains
-    PROJECT_BLUEPRINT ||--o{ SAVED_BLUEPRINT : bookmarked_in
-    PROJECT_BLUEPRINT ||--o{ BLUEPRINT_LIKE : received_likes
+    PROJECT_BLUEPRINT ||--o{ SAVED_BLUEPRINT : saved_by
+    PROJECT_BLUEPRINT ||--o{ BLUEPRINT_LIKE : liked_by
     
     USER_PROGRESS }|--|| ROADMAP_MILESTONE : completes
     
     USER {
         uuid id PK
         string email UK
+        string password_hash
         string name
         string avatar_url
         string github_username
@@ -523,7 +525,7 @@ erDiagram
         uuid id PK
         uuid idea_id FK UK
         jsonb system_architecture
-        string folder_structure
+        text folder_structure
         jsonb database_schema
         jsonb api_specifications
         jsonb edge_cases
@@ -566,7 +568,7 @@ erDiagram
     }
 ```
 
-## 8.2 PostgreSQL SQL Schema Definitions
+## 8.2 PostgreSQL SQL Database Schema
 ```sql
 -- Enable UUID extension
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
@@ -579,8 +581,8 @@ CREATE TABLE users (
     name VARCHAR(128) NOT NULL,
     avatar_url TEXT,
     github_username VARCHAR(100),
-    role VARCHAR(32) DEFAULT 'USER', -- 'USER', 'ADMIN', 'PRO'
-    tier VARCHAR(32) DEFAULT 'FREE', -- 'FREE', 'PRO', 'ENTERPRISE'
+    role VARCHAR(32) DEFAULT 'USER',
+    tier VARCHAR(32) DEFAULT 'FREE',
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
@@ -600,7 +602,7 @@ CREATE TABLE project_ideas (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- Deep Blueprints Table
+-- Project Blueprints Table
 CREATE TABLE project_blueprints (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     idea_id UUID UNIQUE NOT NULL REFERENCES project_ideas(id) ON DELETE CASCADE,
@@ -626,45 +628,63 @@ CREATE TABLE roadmap_milestones (
     code_snippets JSONB DEFAULT '[]'::jsonb
 );
 
--- User Roadmap Progress Tracking
+-- User Progress Table
 CREATE TABLE user_progress (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     milestone_id UUID NOT NULL REFERENCES roadmap_milestones(id) ON DELETE CASCADE,
-    status VARCHAR(32) DEFAULT 'COMPLETED', -- 'IN_PROGRESS', 'COMPLETED'
+    status VARCHAR(32) DEFAULT 'COMPLETED',
     completed_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     UNIQUE(user_id, milestone_id)
 );
 
--- Indexes for lightning fast queries
+-- Saved Blueprints (Bookmarks)
+CREATE TABLE saved_blueprints (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    blueprint_id UUID NOT NULL REFERENCES project_blueprints(id) ON DELETE CASCADE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(user_id, blueprint_id)
+);
+
+-- Blueprint Likes
+CREATE TABLE blueprint_likes (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    blueprint_id UUID NOT NULL REFERENCES project_blueprints(id) ON DELETE CASCADE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(user_id, blueprint_id)
+);
+
+-- Optimized Performance Indexes
 CREATE INDEX idx_project_ideas_user ON project_ideas(user_id);
 CREATE INDEX idx_project_ideas_difficulty ON project_ideas(difficulty);
 CREATE INDEX idx_project_ideas_public ON project_ideas(is_public);
 CREATE INDEX idx_roadmap_milestones_blueprint ON roadmap_milestones(blueprint_id);
 CREATE INDEX idx_user_progress_user ON user_progress(user_id);
+CREATE INDEX idx_saved_blueprints_user ON saved_blueprints(user_id);
 ```
 
 ---
 
-# 9. API Design & Interface Specifications
+# 9. API Design & Interface Specifications (FastAPI)
 
-### 9.1 Authentication & Profile
+### 9.1 Authentication & Profile (`/api/v1/auth`)
 - `POST /api/v1/auth/register` — Register new user with email & password.
-- `POST /api/v1/auth/login` — Login user & return JWT token + user profile.
-- `GET /api/v1/auth/me` — Retrieve current authenticated user session.
-- `POST /api/v1/auth/github` — OAuth callback handler for GitHub login.
+- `POST /api/v1/auth/login` — Login user & return JWT Bearer access token.
+- `GET /api/v1/auth/me` — Retrieve current authenticated user profile.
+- `POST /api/v1/auth/github` — OAuth2 exchange code for user session.
 
-### 9.2 AI Generation Engine
+### 9.2 AI Generation Engine (`/api/v1/ai`)
 - `POST /api/v1/ai/generate-ideas`
-  - **Description:** Generates 3 unique project ideas matching criteria.
   - **Request Body:**
     ```json
     {
-      "skills": ["React", "TypeScript", "Node.js", "Docker"],
-      "preferredStack": ["Next.js", "FastAPI", "PostgreSQL", "Redis"],
+      "skills": ["React", "Python", "PostgreSQL", "Docker"],
+      "preferred_stack": ["FastAPI", "React 19", "TailwindCSS", "Redis"],
       "difficulty": "ADVANCED",
-      "careerGoal": "FULLSTACK_ARCHITECT",
-      "domainInterest": "DevTools & Observability"
+      "career_goal": "FULLSTACK_ARCHITECT",
+      "domain_interest": "AI DevTools & Observability"
     }
     ```
   - **Response (200 OK):**
@@ -674,89 +694,87 @@ CREATE INDEX idx_user_progress_user ON user_progress(user_id);
       "data": [
         {
           "id": "idea-912a-431f",
-          "title": "HyperWatch: Distributed OpenTelemetry Edge Tracer",
-          "tagline": "A high-throughput telemetry aggregator with real-time anomaly detection and flamegraph visualizer.",
+          "title": "AgentTrace: Distributed Multi-Agent LLM Observability Cockpit",
+          "tagline": "An async telemetry pipeline tracking agent decision DAGs, token economics, and hallucination scores.",
           "difficulty": "ADVANCED",
-          "matchScorePercentage": 96,
-          "whyUnique": "Implements custom eBPF edge sampling and streaming WebSockets instead of passive logging.",
-          "recommendedTechStack": {
-            "frontend": ["Next.js 15", "TailwindCSS", "React Flow", "D3.js"],
-            "backend": ["Node.js / Express", "Go / Rust Worker"],
-            "database": ["ClickHouse / PostgreSQL", "Redis"],
-            "devops": ["Docker", "Kubernetes", "Prometheus"]
+          "match_score_percentage": 98,
+          "why_unique": "Features OpenTelemetry span graphs for agent sub-calls with real-time SSE streaming visualizers.",
+          "recommended_tech_stack": {
+            "frontend": ["React 19", "TypeScript", "React Flow", "TailwindCSS"],
+            "backend": ["Python", "FastAPI", "AsyncIO", "Celery"],
+            "database": ["PostgreSQL", "Redis"],
+            "ai_ml": ["Google Gemini 1.5 Pro", "LangGraph"],
+            "devops": ["Docker", "Prometheus"]
           },
-          "keyFeatures": [
-            "Real-time distributed span visualization",
-            "Streaming anomaly alerts via Discord/Slack webhooks",
-            "WASM-powered client-side flamegraph generation"
+          "key_features": [
+            "Real-time LangGraph execution trace visualizer",
+            "Streaming hallucination detection scoring engine",
+            "Cost & token budget circuit breaker"
           ],
-          "estimatedCompletionWeeks": 4
+          "estimated_completion_weeks": 4
         }
       ]
     }
     ```
 
-- `GET /api/v1/ai/stream-blueprint/:ideaId` (SSE Endpoint)
+- `GET /api/v1/ai/stream-blueprint/{idea_id}` (Server-Sent Events)
   - **Headers:** `Accept: text/event-stream`
-  - **Description:** Streams modular blueprint segments in real-time.
-  - **Event Stream Flow:**
-    1. `event: architecture` — Emits system diagram & component map.
-    2. `event: schemas` — Emits database models & ERD.
-    3. `event: apis` — Emits REST & WebSocket endpoint specs.
-    4. `event: roadmap` — Emits array of milestone nodes.
-    5. `event: resume` — Emits ATS bullet points.
-    6. `event: done` — Generation complete.
+  - **Event Streams:**
+    - `event: architecture` $\rightarrow$ `{ "style": "EVENT_DRIVEN_FASTAPI", "diagram": "..." }`
+    - `event: schemas` $\rightarrow$ `{ "erd": "...", "models": [...] }`
+    - `event: apis` $\rightarrow$ `[{ "method": "POST", "path": "/api/v1/trace", ... }]`
+    - `event: roadmap` $\rightarrow$ `[{ "phase": 1, "title": "Setup & Telemetry Gateway", ... }]`
+    - `event: resume` $\rightarrow$ `["Architected async FastAPI telemetry ingestion pipeline...", ...]`
+    - `event: done` $\rightarrow$ `{ "status": "completed", "blueprint_id": "..." }`
 
-### 9.3 Blueprints & Workspace Operations
-- `GET /api/v1/blueprints/:id` — Retrieve full blueprint and milestone state.
-- `POST /api/v1/blueprints/:id/save` — Bookmark blueprint to user's saved workspace.
-- `POST /api/v1/blueprints/:id/milestones/:milestoneId/toggle` — Mark milestone step as completed / pending.
-- `POST /api/v1/blueprints/:id/export/zip` — Generate and stream downloadable project boilerplate `.zip`.
-- `POST /api/v1/blueprints/:id/export/github` — Create private/public repo on user's GitHub account with complete scaffolded boilerplate.
+### 9.3 Blueprints & Workspaces (`/api/v1/blueprints`)
+- `GET /api/v1/blueprints/{id}` — Retrieve full blueprint and milestone state.
+- `POST /api/v1/blueprints/{id}/save` — Save blueprint to user's personal workspace.
+- `POST /api/v1/blueprints/{id}/milestones/{milestone_id}/toggle` — Toggle milestone completion status.
+- `POST /api/v1/blueprints/{id}/export/zip` — Stream downloadable starter `.zip` archive containing scaffolded project structure.
 
-### 9.4 Community Showcase & Social
+### 9.4 Community Showcase (`/api/v1/community`)
 - `GET /api/v1/community/explore?sort=trending&page=1&limit=12` — Browse community blueprints.
-- `POST /api/v1/community/blueprints/:id/like` — Toggle like/upvote.
-- `POST /api/v1/community/blueprints/:id/fork` — Clone blueprint into user's private workspace.
+- `POST /api/v1/community/blueprints/{id}/like` — Upvote / like blueprint.
+- `POST /api/v1/community/blueprints/{id}/fork` — Fork blueprint into personal workspace.
 
 ---
 
 # 10. Master Phased Implementation TODO
 
-## Phase 1: Core Foundation & Modern Design System (Days 1–2)
-- [ ] Initialize clean monorepo or standard client-server workspace with TypeScript.
-- [ ] Setup Next.js frontend with TailwindCSS, Lucide Icons, and Framer Motion.
-- [ ] Establish Cyberpunk "Obsidian Cyber-Glass" theme tokens, glowing card components, custom scrollbars, and animated background particles.
-- [ ] Build Express/Fastify TypeScript backend server with robust CORS, helmet, and rate limiting.
-- [ ] Integrate PostgreSQL database with Prisma schema, connection pooling, and migration scripts.
-- [ ] Implement JWT / OAuth authentication with user registration, login, and secure sessions.
+## Phase 1: Environment & Full-Stack Foundation (Days 1–2)
+- [ ] Initialize frontend directory with **React (Vite + TypeScript)**, TailwindCSS, Lucide Icons, and React Flow.
+- [ ] Initialize backend directory with **Python 3.11+**, **FastAPI**, **Uvicorn**, **SQLAlchemy 2.0 (async)**, and **Alembic**.
+- [ ] Configure PostgreSQL database connection with `asyncpg` connection pool.
+- [ ] Implement database models in SQLAlchemy (`User`, `ProjectIdea`, `ProjectBlueprint`, `RoadmapMilestone`, `UserProgress`).
+- [ ] Setup Alembic migration environment and generate baseline schema migrations.
+- [ ] Implement JWT authentication (Register, Login, Token verify, Current User dependency).
 
 ## Phase 2: AI Engine & Ideation Pipeline (Days 3–4)
-- [ ] Setup Google Gemini API SDK / LangChain orchestrator with structured JSON output prompts.
-- [ ] Create robust Prompt Builders with few-shot examples, domain injections, and edge-case mandates.
-- [ ] Implement Idea Generation REST endpoint with input validation (Zod) and Redis prompt caching.
-- [ ] Build interactive Input Matrix UI with instant tag additions, difficulty sliders, and role selectors.
-- [ ] Build Idea Showcase Grid with dynamic match scores, hover glows, and tech stack badges.
+- [ ] Configure Google Gemini API async client (`google-genai` / `google-generativeai`) with structured JSON schema output prompts.
+- [ ] Implement Prompt Engineering templates with few-shot domain examples, edge cases, and difficulty constraints.
+- [ ] Build FastAPI `POST /api/v1/ai/generate-ideas` endpoint with Pydantic validation and Redis caching.
+- [ ] Build React Input Matrix UI with skill tag adder, difficulty slider, role selector, and domain cards.
+- [ ] Build Idea Grid UI with hover glowing cards, match score badges, and tech stack tags.
 
 ## Phase 3: Deep Blueprint & Visual Roadmap Engine (Days 5–6)
-- [ ] Build SSE (Server-Sent Events) streaming endpoint for real-time progressive blueprint generation.
-- [ ] Integrate React Flow (@xyflow/react) for interactive node-based visual roadmap canvas.
-- [ ] Create custom Node UI components (Status badges, milestone checklist drawers, code snippet viewer).
-- [ ] Build Architecture Diagram renderer (Mermaid.js / SVG graph views).
-- [ ] Build Database Schema ERD visualizer and interactive REST API documentation inspector.
+- [ ] Build FastAPI SSE streaming endpoint `GET /api/v1/ai/stream-blueprint/{idea_id}` for real-time section streaming.
+- [ ] Implement React Flow (`@xyflow/react`) interactive roadmap canvas with custom animated nodes.
+- [ ] Build Blueprint Viewer components: Architecture Diagram visualizer, Database ERD viewer, and REST API specification table.
+- [ ] Build Milestone Inspector drawer with deliverables, prerequisites checklist, and syntax-highlighted code snippets.
 
-## Phase 4: Resume Impact Simulator & Scaffold Generator (Days 7–8)
-- [ ] Build ATS Resume Bullet Point generator with one-click copy and impact metric modifiers.
-- [ ] Implement Automated Project Scaffolder (generate `package.json`, `README.md`, folder structure, `.env.example`, and Dockerfile).
-- [ ] Create `.zip` download stream and GitHub Octokit API integration for one-click repository creation.
-- [ ] Implement Milestone Progress Tracker with local storage backup and database sync.
+## Phase 4: Resume Optimizer, Scaffolding & State Sync (Days 7–8)
+- [ ] Build ATS Resume Bullet Point generator with one-click copy and quantified impact metrics.
+- [ ] Implement Python Starter Kit Scaffolding Engine (generates directory tree, `requirements.txt`, `package.json`, `README.md`, Dockerfile, `.env.example`).
+- [ ] Implement `POST /api/v1/blueprints/{id}/export/zip` in FastAPI returning streaming zip bytes.
+- [ ] Implement Milestone Progress tracking with optimistic UI updates and PostgreSQL persistence.
 
-## Phase 5: Community Showcase, Analytics & Polishing (Days 9–10)
-- [ ] Build Community Discovery feed with search, filters (stack, difficulty, role), and bookmarking.
-- [ ] Add like, view count, and fork counts with optimistic UI updates.
-- [ ] Conduct end-to-end performance audits (Lighthouse $> 95$, TTFB $< 100\text{ ms}$).
-- [ ] Add comprehensive automated test suites (Vitest for frontend components, Jest/Supertest for API endpoints).
-- [ ] Finalize production deployment setup (Vercel + Render/Railway + PostgreSQL DB).
+## Phase 5: Community Showcase, Polish & Deployment (Days 9–10)
+- [ ] Build Community Showcase feed with search, category filters, and sorting (trending, newest).
+- [ ] Add like, bookmark, and fork capabilities with optimistic updates.
+- [ ] Conduct end-to-end performance audits (TTFT $< 800\text{ ms}$, Lighthouse score $> 95$).
+- [ ] Setup Docker Compose for local full-stack development (`frontend`, `backend`, `postgres`, `redis`).
+- [ ] Prepare production deployment configuration (Vercel / Render / Railway / Docker).
 
 ---
-*Document Version: 1.0.0 | Status: APPROVED & READY FOR IMPLEMENTATION*
+*Document Version: 2.0.0 | Architecture: React (Vite) + Python (FastAPI) + PostgreSQL + Gemini AI | Status: READY FOR IMPLEMENTATION*
