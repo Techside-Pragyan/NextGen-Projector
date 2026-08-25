@@ -1,98 +1,98 @@
-# 🚀 NextGen-Projector
+# 🚀 AI Project Idea Generator | NextGen Career Navigator
 
-> **Your AI-Powered Career Navigator.** Analyze your current skill set, forecast future job roles, identify critical skill gaps, and build dynamic, personalized learning paths to achieve your dream career.
+> **Synthesize premium, startup-level software blueprints, interactive development roadmaps, and resume-boosting highlights instantly.** 
 
----
-
-## 🌟 What is NextGen-Projector?
-
-**NextGen-Projector** is an intelligent, educational, and career-growth forecasting platform. Think of it as a **GPS for your career**. 
-
-Instead of guessing what skills you need next or which certifications will help you get promoted, NextGen-Projector utilizes advanced AI to map your starting point, project future job trajectories, and highlight the fastest paths to success.
+This platform is a production-ready, highly interactive, and futuristic AI-powered application designed to help developers, students, researchers, and hackathon participants discover and plan unique, trending project ideas.
 
 ---
 
-## ✨ Key Features
+## ✨ Primary Features
 
-*   **📊 Interactive Skill Mapper:** Import your resume, connect your LinkedIn, or take a quick assessment to generate an interactive, visual 3D skills profile.
-*   **🔮 Career Trajectory Projection:** Explore "what-if" career paths. See how transitioning from *Software Engineer* to *Product Manager* or *AI Specialist* looks over 1, 3, or 5 years.
-*   **🧩 Dynamic Skill-Gap Analysis:** Compare your current skills directly with real-time job market requirements to instantly highlight what you're missing.
-*   **🗺️ Smart Learning Roadmaps:** Get automated, curated learning paths containing recommended courses, open-source projects, and reading materials tailored to your pace.
-*   **📈 Job Market Trend Engine:** Stay ahead of the curve with projected job demand, salary trends, and emerging industry-critical technologies.
+1. **AI Synthesis Engine:** Multi-step parameter wizard compiling Skills, Interests, Tech Stack, Duration, and Team Sizes into rich structured JSON blueprints.
+2. **SVG Architecture Flow Diagrams:** Sleek, interactive vector mappings of databases, servers, and clients with animated flowing neon dash indicators.
+3. **Week-by-Week Roadmap Checklists:** Interactive progress trackers calculating percentage completions as you tick off milestones.
+4. **Resume Booster & Metrics:** Radar skill fit graphs (via Recharts), copy-paste bullet highlight templates, and interview prep guides.
+5. **Hackathon Mode:** Overclocked synthesis layers outputting stripped, high-innovation MVPs within seconds.
+6. **AI Mentor Chatbot:** Floating AI coach giving real-time advice on database design, performance tuning, and deployments.
+7. **Admin Operations Panel:** Operational stat tracking, live audit logs, and dynamic sliders to calibrate AI instructions on the fly.
+8. **Sandbox Fallback:** Highly resilient offline support utilizing pre-built cybernetic templates and local-storage syncing if MongoDB/Gemini APIs are offline.
 
 ---
 
-## 🛠️ How It Works
+## 🏗️ Monorepo Architecture
 
 ```mermaid
 graph TD
-    A[Input: Resume / LinkedIn / Skills] --> B[AI Skills Parser]
-    B --> C[Skills Matrix / Dashboard]
-    C --> D{Choose Target Career}
-    D --> E[Skill-Gap Analysis Engine]
-    E --> F[Personalized Roadmap & Learning Path]
-    F --> G[Continuous Skill Projection & Tracking]
-```
+    subgraph Frontend [Next.js Client]
+        LP[Futuristic Landing Page] --> DB[Main Dashboard]
+        DB --> GEN[AI Generator Engine]
+        DB --> TR[Trending Dashboard]
+        DB --> RB[Resume Booster Dashboard]
+        DB --> HM[Hackathon Mode]
+        DB --> AD[Admin Control Panel]
+        GEN --> BPR[Project Blueprint & Roadmap Viewer]
+    end
 
-1.  **Input:** Provide your current background, projects, and target role.
-2.  **Analyze:** The platform parses your experience and benchmarks it against thousands of industry job descriptions.
-3.  **Project:** NextGen-Projector maps out multiple chronological steps, identifying the precise skills and certifications needed.
-4.  **Learn:** Dive into interactive, weekly roadmaps to systematically close your knowledge gaps.
+    subgraph Backend [Express API Server]
+        Auth[Auth Middleware / JWT]
+        AI[AI Generation Service - Gemini/OpenAI]
+        DB_M[Mongoose Models]
+      	AdminCtrl[Admin controllers]
+    end
+
+    Frontend -- REST / JSON & JWT --> Backend
+    Backend --> MongoDB[(MongoDB Atlas)]
+    Backend --> GeminiAPI[Gemini 1.5 Flash]
+```
 
 ---
 
-## 💻 Tech Stack (Proposed)
+## 🛠️ Technology Stack
 
-*   **Frontend:** React.js / Next.js, Tailwind CSS (for modern, responsive, and glassmorphic UI), Framer Motion (for smooth animations), Recharts (for skills visualization).
-*   **Backend:** Python (FastAPI) or Node.js (Express) – highly optimized for prompt engineering and heavy data processing.
-*   **Database:** PostgreSQL (for structured user profiles) & Redis (for fast caching of market trends).
-*   **AI/ML Integration:** Gemini 1.5 Pro / Claude 3.5 Sonnet / OpenAI GPT-4o for dynamic path generation and resume parsing.
+* **Frontend Client:** Next.js (App Router, Tailwind CSS, TypeScript, Framer Motion, Recharts, Lucide Icons)
+* **Backend API:** Node.js, Express.js, TypeScript, Mongoose, JWT authentication
+* **Database System:** MongoDB Atlas / Local MongoDB
+* **Generative Core:** Google Gemini 1.5 Flash API (via `@google/generative-ai`)
 
 ---
 
 ## 🚀 Getting Started
 
-*(Instructions will be updated as implementation progresses)*
+### 1. Prerequisites
+- **Node.js:** v18.0.0 or higher
+- **npm:** v9.0.0 or higher
 
-### Prerequisites
-- Node.js (v18+)
-- Python (v3.10+)
+### 2. Environment Configurations
+Create a `.env` file in the root directory:
+```env
+PORT=5000
+MONGODB_URI=mongodb://127.0.0.1:27017/nextgen_project_generator
+JWT_SECRET=nextgen_projector_secret_jwt_key_2026_dev
 
-### Installation
+# AI Engine API Key (Optional: fallbacks to Sandbox simulator if blank!)
+GEMINI_API_KEY=your_gemini_api_key_here
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/Techside-Pragyan/NextGen-Projector.git
-    cd NextGen-Projector
-    ```
+NEXT_PUBLIC_API_URL=http://localhost:5000/api
+```
 
-2.  **Install dependencies:**
-    ```bash
-    # For Frontend
-    npm install
-    
-    # For Backend
-    pip install -r requirements.txt
-    ```
+### 3. Installation
+Install dependencies across both client and server:
+```bash
+# Installs workspace dependencies simultaneously
+npm run install:all
+```
 
-3.  **Set up Environment Variables:**
-    Create a `.env` file in the root directory:
-    ```env
-    DATABASE_URL=your-database-url
-    GEMINI_API_KEY=your-gemini-api-key
-    ```
-
-4.  **Run the application:**
-    ```bash
-    npm run dev
-    ```
+### 4. Running the Workspace
+Boot up the concurrent hot-reloaded development servers:
+```bash
+# Starts Node Express and NextJS together
+npm run dev
+```
+- **Frontend Panel:** Available at [http://localhost:3000](http://localhost:3000)
+- **Backend API Server:** Listening on [http://localhost:5000](http://localhost:5000)
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome! If you have suggestions for improvement, feel free to open an issue or submit a pull request. Let's build the future of professional growth together.
-
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](file:///c:/Users/pragy/Documents/GitHub/NextGen-Projector/LICENSE) file for details.
+This workspace is licensed under the MIT License.
