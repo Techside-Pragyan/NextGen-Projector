@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import Optional
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, ConfigDict, EmailStr, Field
 
 
 class UserRegister(BaseModel):
@@ -15,6 +15,8 @@ class UserLogin(BaseModel):
 
 
 class UserResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: str
     email: str
     name: str
@@ -23,9 +25,6 @@ class UserResponse(BaseModel):
     role: str = "USER"
     tier: str = "FREE"
     created_at: Optional[datetime] = None
-
-    class Config:
-        from_attributes = True
 
 
 class AuthResponse(BaseModel):
