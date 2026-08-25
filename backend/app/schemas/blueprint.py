@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import Any, Dict, List, Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from backend.app.schemas.milestone import MilestoneNodeSchema
 
 
@@ -49,6 +49,8 @@ class EdgeCaseSpec(BaseModel):
 
 
 class ProjectBlueprintSchema(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: str
     idea_id: str
     system_architecture: SystemArchitectureSchema
@@ -59,9 +61,6 @@ class ProjectBlueprintSchema(BaseModel):
     resume_bullets: List[str] = Field(default_factory=list)
     milestones: List[MilestoneNodeSchema] = Field(default_factory=list)
     created_at: Optional[datetime] = None
-
-    class Config:
-        from_attributes = True
 
 
 class BlueprintDetailResponse(BaseModel):
